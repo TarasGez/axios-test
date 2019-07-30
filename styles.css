@@ -1,0 +1,136 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 15px;
+  color: #555;
+  text-shadow: 1px 1px 1px white;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  text-shadow: none;
+}
+
+button.active {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+  text-shadow: none;
+}
+
+#form {
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 5px;
+  border: 1px solid #777;
+  background-color: #768e92;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#form row {
+  display: flex;
+  padding: 4px;
+  justify-content: left;
+  align-items: center;
+}
+#form label {
+  text-align: right;
+  min-width: 120px;
+  margin-right: 10px;
+}
+#form span {
+  margin-left: 10px;
+}
+#form button {
+  margin-top: 20px;
+}
+#form input[type=number] {
+  width: 40px;
+}
+#form input {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+#form label, #form span {
+  color: #eee;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+#root div#users {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#root div#users .user {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  border: 1px solid #b18954;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 20px;
+}
+#root div#users .user .delete-button {
+  text-align: right;
+  margin-bottom: 10px;
+}
+#root div#users .user .delete-button span {
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 3px;
+  border: 1px solid #bdb09e;
+  border-radius: 50%;
+}
+#root div#users .user .delete-button span:hover {
+  font-weight: 700;
+  color: red;
+  border: 1px solid red;
+}
+#root div#users .user row {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+#root div#users .user row span {
+  color: #777;
+  margin-right: 10px;
+}
+#root div#users .user row input {
+  padding: 5px;
+  font-size: 18px;
+}
+#root div#users .user row input:disabled {
+  background: none;
+  border: 1px;
+}
+#root div#users .user button {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
