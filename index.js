@@ -53,6 +53,10 @@ function addNewUser () {
 
             createUserAsync(newUserData);
 
+            // Clear Form
+            values[0].value = '';
+            values[1].value = '';
+
         } else {
             alert('All inputs must be filled');
         }

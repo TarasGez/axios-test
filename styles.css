@@ -87,7 +87,7 @@ button.active {
   display: flex;
   flex-direction: column;
   background-color: beige;
-  border: 1px solid #b18954;
+  border: 1px solid #e6e6c8;
   border-radius: 3px;
   margin: 10px;
   padding: 20px;
@@ -96,17 +96,17 @@ button.active {
   text-align: right;
   margin-bottom: 10px;
 }
-#root div#users .user .delete-button span {
-  cursor: pointer;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
+#root div#users .user .delete-button button {
+  width: 30px;
+  height: 30px;
   text-align: center;
+  margin: 0;
   padding: 3px;
   border: 1px solid #bdb09e;
   border-radius: 50%;
+  background: none;
 }
-#root div#users .user .delete-button span:hover {
+#root div#users .user .delete-button button:hover {
   font-weight: 700;
   color: red;
   border: 1px solid red;

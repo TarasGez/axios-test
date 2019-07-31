@@ -94,7 +94,7 @@ button.active {
       display: flex;
       flex-direction: column;
       background-color: beige;
-      border: 1px solid rgb(177, 137, 84);
+      border: 1px solid #e6e6c8;
       border-radius: 3px;
       margin: 10px;
       padding: 20px;
@@ -105,17 +105,17 @@ button.active {
         margin-bottom: 10px;
       }
 
-      .delete-button span{
-        cursor: pointer;
-        display: inline-block;
-        width: 20px;
-        height: 20px;
+      .delete-button button{
+        width: 30px;
+        height: 30px;
         text-align: center;
+        margin: 0;
         padding: 3px;
         border: 1px solid rgb(189, 176, 158);
         border-radius: 50%;
+        background: none;
       }
-      .delete-button span:hover {
+      .delete-button button:hover {
         font-weight: 700;
         color: red;
         border: 1px solid red;

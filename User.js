@@ -20,7 +20,7 @@ class User {
         // Create delete button
         this.deleteButton = document.createElement('div');
         this.deleteButton.className = 'delete-button';
-        this.deleteButtonSpan = document.createElement('span');
+        this.deleteButtonSpan = document.createElement('button');
         this.deleteButtonSpan.innerText = 'x'
         this.deleteButtonSpan.addEventListener('click', this.del.bind(this));
         this.deleteButton.append(this.deleteButtonSpan);
@@ -38,7 +38,6 @@ class User {
         this.inputName.disabled = true;
         this.inputName.addEventListener('change', this.changeName.bind(this));
 
-
         this.rowName.append(this.inputNameTitle);
         this.rowName.append(this.inputName);
 
@@ -49,6 +48,8 @@ class User {
 
         this.inputAge = document.createElement('input');
         this.inputAge.type = 'number';
+        this.inputAge.min=1;
+        this.inputAge.max=130;
         this.inputAge.className = 'age';
         this.inputAge.value = this.data.age;
         this.inputAge.disabled = true;
@@ -70,7 +71,6 @@ class User {
     attach() {
         // this.root.append(this.elementContainer);
         this.root.insertBefore(this.elementContainer, this.root.firstChild);
-
  
         this.elementContainer.append(this.deleteButton);
 
@@ -99,20 +99,29 @@ class User {
             this.flag = !this.flag;
 
         } else {
-            this.inputName.disabled = true;
-            this.inputAge.disabled = true;
-            this.button.innerText = 'Edit';
-            this.button.classList.remove('active');
-            this.flag = !this.flag;
+            
+            if (!this.newName || !this.newAge) {
+                alert('All inputs must be filled');
+            } if(this.newAge == 0 || this.newAge > 130) {
+                alert('Age must be more them 0 and les 130');
+            } 
+            else {
+                if (this.newName != this.data.name
+                    || Number(this.newAge) != Number(this.data.age)) {
 
-            if (this.newName != this.data.name
-                || Number(this.newAge) != Number(this.data.age)) {
-                this.actions.edit({
-                    age: Number(this.newAge),
-                    id: this.data.id,
-                    name: this.newName
-                });    
-            }   
+                        this.inputName.disabled = true;
+                        this.inputAge.disabled = true;
+                        this.button.innerText = 'Edit';
+                        this.button.classList.remove('active');
+                        this.flag = !this.flag;
+
+                        this.actions.edit({
+                            age: Number(this.newAge),
+                            id: this.data.id,
+                            name: this.newName
+                    });    
+                }
+            }               
         }
         
     }
@@ -121,25 +130,3 @@ class User {
         this.actions.del(this.data.id);
     }
 }
-
-// const userS = {id: 0, name: 'Vasy Pupkin', age: 26};
-// const act = {
-//     del: 
-//         (id) => {
-//             console.log(id)
-        
-//     },
-//     edit: 
-//         () => {
-//             console.log('edit')
-        
-//     }
-// }
-
-// const user = new User({
-//     data: userS,
-//     actions: act,
-//     className: 'user',
-//     root: 'users',
-//     autoAttach: true
-// });
